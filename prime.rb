@@ -2,15 +2,18 @@
 require 'pry'
 
 def prime?(int)
-  
+  if int <= 3
+    return int > 1
+  end
+  if int % 2 == 0 or n % 3 == 0
+    return false
+  end
+  i = 5
+  while i ** 2 <= int
+    if int % i == 0 or int % (i + 2) == 0
+      return false
+      i += 6
+    end
+    return true
 end
 
-let A be an array of Boolean values, indexed by integers 2 to n,
-    initially all set to true.
-    
-    for i = 2, 3, 4, ..., not exceeding √n do
-        if A[i] is true
-            for j = i2, i2+i, i2+2i, i2+3i, ..., not exceeding n do
-                A[j] := false
-
-    return all i such that A[i] is true.
