@@ -1,20 +1,27 @@
 # Add  code here!
 require 'pry'
 
-def prime?(int)
-  if int <= 3
-    return int > 1
-  end
-  if int % 2 == 0 or int % 3 == 0
-    return false
-  end
+def prime?(n)
+  return false if (n <= 1)
+  return true if (n <= 3)
+  return false if (n % 2 == 0 || n % 3 == 0)
   i = 5
-  while i ** 2 <= int
-    if int % i == 0 or int % (i + 2) == 0
-      return false
-      i += 6
-    end
-    return true
+  while i*i <= n do |index|
+    return false if n % i == 0 || n % (i + 2) == 0
+    i += 6
   end
 end
 
+
+if (n <= 1)  return false; 
+    if (n <= 3)  return true; 
+  
+    // This is checked so that we can skip  
+    // middle five numbers in below loop 
+    if (n%2 == 0 || n%3 == 0) return false; 
+  
+    for (int i=5; i*i<=n; i=i+6) 
+        if (n%i == 0 || n%(i+2) == 0) 
+           return false; 
+  
+    return true; 
